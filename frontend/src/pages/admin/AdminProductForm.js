@@ -11,7 +11,7 @@ const AdminProductForm = () => {
   const isEdit = !!id;
 
   const [categories, setCategories] = useState([]);
-  const [setUploading] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [form, setForm] = useState({
     name: '', description: '', shortDescription: '', price: '', mrp: '',
@@ -124,11 +124,11 @@ const AdminProductForm = () => {
   //   setForm(prev => ({ ...prev, images: prev.images.filter((_, i) => i !== index) }));
   // };
 
-  // const updateSize = (index, field, value) => {
-  //   const sizes = [...form.sizes];
-  //   sizes[index] = { ...sizes[index], [field]: field === 'stock' ? Number(value) : value };
-  //   setForm(prev => ({ ...prev, sizes }));
-  // };
+  const updateSize = (index, field, value) => {
+    const sizes = [...form.sizes];
+    sizes[index] = { ...sizes[index], [field]: field === 'stock' ? Number(value) : value };
+    setForm(prev => ({ ...prev, sizes }));
+  };
 
   const addSize = () => setForm(prev => ({ ...prev, sizes: [...prev.sizes, { size: '', stock: 0 }] }));
   const removeSize = (i) => setForm(prev => ({ ...prev, sizes: prev.sizes.filter((_, idx) => idx !== i) }));
