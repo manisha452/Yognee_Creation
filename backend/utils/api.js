@@ -16,7 +16,7 @@ export const productAPI = {
   getOne:     (slug)        => api.get(`/products/${slug}`),
   getRelated: (id)          => api.get(`/products/${id}/related`),
   addReview:  (id, data)    => api.post(`/products/${id}/reviews`, data),
-  getFilters: () => api.get('/api/products/filters'),
+  getFilters: () => api.get('/products/filters'),
 };
 
 export const categoryAPI = {
