@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { adminAPI } from '../../utils/api';
 import StatCards from '../../components/common/StateCards'
-import RevenueChart from '../../components/common/RevenueChart';
+// import RevenueChart from '../../components/common/RevenueChart';
 import MonthlyAnalytics from '../../components/common/MonthlyAnalytics';
-import OrdersPanel from '../../components/common/OrdersPanel';
+// import OrdersPanel from '../../components/common/OrdersPanel';
 import TopProducts from '../../components/common/TopProducts';
 import QuickActions from '../../components/common/QuickActions';
 
@@ -50,8 +50,8 @@ const AdminDashboard = () => {
   const {
     stats = {},
     monthlySales = [],
-    ordersByStatus = [],
-    recentOrders = [],
+    // ordersByStatus = [],
+    // recentOrders = [],
     topProducts = [],
   } = data || {};
 
