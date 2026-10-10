@@ -69,16 +69,16 @@ const SkeletonCard = () => (
 );
 
 /* ─── Status Badge ──────────────────────────────────────────────── */
-const StatusBadge = ({ status, size = 'sm' }) => {
-  const s = STATUS_STYLES[status] || STATUS_STYLES.pending;
-  return (
-    <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-medium capitalize
-      ${size === 'sm' ? 'text-xs' : 'text-sm'} ${s.badge}`}>
-      <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${s.dot}`} />
-      {status}
-    </span>
-  );
-};
+// const StatusBadge = ({ status, size = 'sm' }) => {
+//   const s = STATUS_STYLES[status] || STATUS_STYLES.pending;
+//   return (
+//     <span className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full font-medium capitalize
+//       ${size === 'sm' ? 'text-xs' : 'text-sm'} ${s.badge}`}>
+//       <span className={`w-1.5 h-1.5 rounded-full flex-shrink-0 ${s.dot}`} />
+//       {status}
+//     </span>
+//   );
+// };
 
 /* ─── Product Row ───────────────────────────────────────────────── */
 const ProductRow = ({ item, isLast }) => (
