@@ -11,7 +11,7 @@ const AdminProductForm = () => {
   const isEdit = !!id;
 
   const [categories, setCategories] = useState([]);
-  const [uploading, setUploading] = useState(false);
+  const [setUploading] = useState(false);
   const [saving, setSaving] = useState(false);
   const [form, setForm] = useState({
     name: '', description: '', shortDescription: '', price: '', mrp: '',
@@ -101,34 +101,34 @@ const AdminProductForm = () => {
     }
   };
 
-  const handleImageUpload = async (e) => {
-    const files = Array.from(e.target.files);
-    if (!files.length) return;
-    setUploading(true);
-    try {
-      const formData = new FormData();
-      files.forEach(f => formData.append('images', f));
-      const res = await uploadAPI.uploadImages(formData);
-      setForm(prev => ({ ...prev, images: [...prev.images, ...res.data.images] }));
-      toast.success(`${files.length} image(s) uploaded!`);
-    } catch (err) {
-      toast.error('Image upload failed. Check Cloudinary config.');
-    } finally { setUploading(false); }
-  };
+  // const handleImageUpload = async (e) => {
+  //   const files = Array.from(e.target.files);
+  //   if (!files.length) return;
+  //   setUploading(true);
+  //   try {
+  //     const formData = new FormData();
+  //     files.forEach(f => formData.append('images', f));
+  //     const res = await uploadAPI.uploadImages(formData);
+  //     setForm(prev => ({ ...prev, images: [...prev.images, ...res.data.images] }));
+  //     toast.success(`${files.length} image(s) uploaded!`);
+  //   } catch (err) {
+  //     toast.error('Image upload failed. Check Cloudinary config.');
+  //   } finally { setUploading(false); }
+  // };
 
-  const removeImage = async (index) => {
-    const img = form.images[index];
-    try {
-      if (img.publicId) await uploadAPI.deleteImage(img.publicId);
-    } catch (e) { }
-    setForm(prev => ({ ...prev, images: prev.images.filter((_, i) => i !== index) }));
-  };
+  // const removeImage = async (index) => {
+  //   const img = form.images[index];
+  //   try {
+  //     if (img.publicId) await uploadAPI.deleteImage(img.publicId);
+  //   } catch (e) { }
+  //   setForm(prev => ({ ...prev, images: prev.images.filter((_, i) => i !== index) }));
+  // };
 
-  const updateSize = (index, field, value) => {
-    const sizes = [...form.sizes];
-    sizes[index] = { ...sizes[index], [field]: field === 'stock' ? Number(value) : value };
-    setForm(prev => ({ ...prev, sizes }));
-  };
+  // const updateSize = (index, field, value) => {
+  //   const sizes = [...form.sizes];
+  //   sizes[index] = { ...sizes[index], [field]: field === 'stock' ? Number(value) : value };
+  //   setForm(prev => ({ ...prev, sizes }));
+  // };
 
   const addSize = () => setForm(prev => ({ ...prev, sizes: [...prev.sizes, { size: '', stock: 0 }] }));
   const removeSize = (i) => setForm(prev => ({ ...prev, sizes: prev.sizes.filter((_, idx) => idx !== i) }));
