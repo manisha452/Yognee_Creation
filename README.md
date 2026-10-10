@@ -1,4 +1,4 @@
-# 🌸 Zuri Fashion — Girls Fashion eCommerce (MERN Stack)
+# 🌸 Yognee Creation — Girls Fashion eCommerce (MERN Stack)
 
 A **production-ready, fully dynamic** girls fashion eCommerce platform built with the MERN stack. Features real-time dynamic categories, Razorpay payments, Cloudinary image uploads, JWT auth, and a full admin dashboard.
 
@@ -57,7 +57,7 @@ Fonts:     Playfair Display, DM Sans, Cormorant Garamond
 ## 📁 Project Structure
 
 ```
-zuri-fashion/
+yogneeCreation/
 ├── backend/
 │   ├── config/
 │   │   └── cloudinary.js          # Cloudinary + Multer config
@@ -158,7 +158,7 @@ Edit `backend/.env`:
 
 ```env
 PORT=5000
-MONGO_URI=mongodb://localhost:27017/zuri_fashion
+MONGO_URI=mongodb://localhost:27017/yogneeCreation
 
 # Generate a strong secret: node -e "console.log(require('crypto').randomBytes(64).toString('hex'))"
 JWT_SECRET=your_super_secret_jwt_key_change_this
@@ -182,8 +182,6 @@ npm run seed
 ```
 
 This creates:
-- **Admin**: `admin@zurifashion.com` / `admin123456`
-- **User**: `user@zurifashion.com` / `user123456`
 - 8 product categories
 - 12 sample products across all categories
 
