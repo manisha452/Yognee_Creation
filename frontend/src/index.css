@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --rose: #f43f5e;
+  --gold: #D4AF37;
+  --nude: #F5E6D3;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: #fafafa;
+  color: #1a1a1a;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #f1f1f1; }
+::-webkit-scrollbar-thumb { background: #e11d48; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #be123c; }
+
+/* Custom classes */
+.font-display { font-family: 'Playfair Display', serif; }
+.font-accent { font-family: 'Cormorant Garamond', serif; }
+.font-body { font-family: 'DM Sans', sans-serif; }
+
+.btn-primary {
+  @apply bg-gray-900 text-white px-6 py-3 rounded-full font-medium hover:bg-gray-700 transition-all duration-300 active:scale-95;
+}
+.btn-outline {
+  @apply border-2 border-gray-700 text-gray-700 px-6 py-3 rounded-full font-medium hover:bg-gray-600 hover:text-white transition-all duration-300 active:scale-95;
+}
+.btn-gold {
+  @apply bg-gold text-white px-6 py-3 rounded-full font-medium hover:bg-gold-dark transition-all duration-300 active:scale-95;
+}
+
+.card-hover {
+  @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+}
+
+.shimmer-bg {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200px 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+/* Slick carousel overrides */
+.slick-dots li button:before { color: #f43f5e !important; }
+.slick-dots li.slick-active button:before { color: #e11d48 !important; }
+.slick-prev:before, .slick-next:before { color: #f43f5e !important; font-size: 24px; }
+
+/* Hero gradient */
+.hero-gradient {
+  background: linear-gradient(135deg, #fff1f2 0%, #fce7f3 50%, #ede9fe 100%);
+}
+
+/* Product card image zoom */
+.product-img-wrap img { transition: transform 0.5s ease; }
+.product-img-wrap:hover img { transform: scale(1.08); }
